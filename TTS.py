@@ -1,11 +1,12 @@
-import win32com.client as wincl
+import pyttsx3
 from tkinter import *
 
+engine = pyttsx3.init()
+engine.setProperty("rate", 150)
 
-def text2Speech():
- text = e.get()
- speak = wincl.Dispatch("SAPI.SpVoice")
- speak.Speak(text)
+def text2speech():
+ engine.say(e.get())
+ engine.runAndWait()
 
 
 #window configs
